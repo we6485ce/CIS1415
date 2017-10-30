@@ -1,0 +1,6 @@
+full_name = input("Enter your name including first, middle, and last:\n").title()
+
+each_name = full_name.split()
+
+print("Initials are %s." % '.'.join(name[0] for name in each_name))
+    
