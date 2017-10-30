@@ -1,0 +1,35 @@
+title = input("Enter a title for the data:\n")
+print("You entered:",title)
+print()
+
+column1 = input("Enter the column 1 header:\n")
+print("You entered:", column1)
+print()
+
+column2 = input("Enter the column 2 header:\n")
+print("You entered:", column2)
+print()
+
+data_point = ""
+while data_point != "-1":
+    data_point = input("Enter a data point (-1 to stop input):\n")
+    if data_point == "-1":
+        break
+    
+    data_points = data_point.split(',')
+    if "," not in data_point:
+        print("Error: No comma in string.\n")
+        continue
+    
+      
+    if data_point.count(",") > 1:
+        print("Error: Too many commas in input.\n")
+        continue
+    if not data_points[1].strip().isdigit():
+        print("Error: Comma not followed by an integer.")
+        print()
+        continue
+    
+    print("Data string:",data_points[0])
+    print("Data integer:",data_points[1].strip())
+    print()
