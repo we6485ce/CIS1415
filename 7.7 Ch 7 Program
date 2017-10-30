@@ -13,6 +13,8 @@ print()
 
 data_point = ""
 data_list = []
+column1_list = []
+column2_list = []
 
 #Loop to continue to ask for input until user enters -1
 while data_point != "-1":
@@ -44,12 +46,20 @@ while data_point != "-1":
     print("Data integer:",data_points[1].strip())
     print()
     
-    #creates list of all user inputs to be displayed later
-    for each  in data_points:
-        data_list.append(data_point)
+    #creates lists of all user inputs to be displayed later
+    column1_list.append(data_points[0])
+    column2_list.append(data_points[1])
+    
     
 # prints chart title and formats columns
 print()
 print("%33s" % title)
 print("%-20s|%23s" % (column1,column2))
 print("-"*44)
+
+# prints users data into the chart
+index = 0
+for i in column1_list:
+    print("%-20s|%23s" % (column1_list[index],column2_list[index]))
+    index += 1
+    
