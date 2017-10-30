@@ -1,3 +1,4 @@
+#Prompts user data inputs
 title = input("Enter a title for the data:\n")
 print("You entered:",title)
 print()
@@ -11,25 +12,44 @@ print("You entered:", column2)
 print()
 
 data_point = ""
+data_list = []
+
+#Loop to continue to ask for input until user enters -1
 while data_point != "-1":
     data_point = input("Enter a data point (-1 to stop input):\n")
+    
+    #ends the loop if -1 entered
     if data_point == "-1":
         break
     
+    # creates error message if no , in input
     data_points = data_point.split(',')
     if "," not in data_point:
         print("Error: No comma in string.\n")
         continue
-    
-      
+          
+    # creates error message if more than 1 , in input
     if data_point.count(",") > 1:
         print("Error: Too many commas in input.\n")
         continue
+    
+    # creates error message if second input entry isn't an integer
     if not data_points[1].strip().isdigit():
         print("Error: Comma not followed by an integer.")
         print()
         continue
     
+    # prints users input
     print("Data string:",data_points[0])
     print("Data integer:",data_points[1].strip())
     print()
+    
+    #creates list of all user inputs to be displayed later
+    for each  in data_points:
+        data_list.append(data_point)
+    
+# prints chart title and formats columns
+print()
+print("%33s" % title)
+print("%-20s|%23s" % (column1,column2))
+print("-"*44)
