@@ -63,3 +63,8 @@ for i in column1_list:
     print("%-20s|%23s" % (column1_list[index],column2_list[index]))
     index += 1
     
+# prints histogram of user data
+print()
+for i in range(len(column1_list)):
+    print("%20s %0s" % (column1_list[i], "*" * int(column2_list[i])))
+    
