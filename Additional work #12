@@ -1,0 +1,15 @@
+# Taking user input of english sentence
+my_str = input("Enter a sentence in english:")
+s = my_str.split()
+
+pig_latin = ""
+
+# Converting each word to pig latin
+for word in s:
+    pig_latin = pig_latin + word[1:] + word[0] +"AY "
+  
+# Removing last space
+pig_latin = pig_latin[:-1]
+
+# Printing output
+print("Pig Latin:", pig_latin) 
