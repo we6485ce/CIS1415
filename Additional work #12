@@ -1,3 +1,4 @@
+#Eric Bjerke James Harrop
 # Taking user input of english sentence
 my_str = input("Enter a sentence in english:").upper()
 s = my_str.split()
