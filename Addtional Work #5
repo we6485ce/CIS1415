@@ -1,3 +1,4 @@
+#Eric Bjerke James Harrop
 num = input("Enter a phone number:\n").upper()
 
 num = num.replace("A","2")
