@@ -1,6 +1,6 @@
 #Eric Bjerke James Harrop
 #Function to count number of consonants
-def num_vowels(my_string):
+def num_consonants(my_string):
     consonants = "bcdfghjklmnpqrstvwxyz"
     count = 0
     for x in my_string.lower():
@@ -9,7 +9,7 @@ def num_vowels(my_string):
     return count        
 
 #Function to count number of vowels
-def num_consonants(my_string):
+def num_vowels(my_string):
     vowels = "aeiou"
     count = 0
     for x in my_string.lower():
