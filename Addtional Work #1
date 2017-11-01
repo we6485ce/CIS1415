@@ -1,3 +1,4 @@
+#Eric Bjerke James Harrop
 full_name = input("Enter your name including first, middle, and last:\n").title()
 
 each_name = full_name.split()
