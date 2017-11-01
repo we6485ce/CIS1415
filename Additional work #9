@@ -1,3 +1,4 @@
+#Eric Bjerke James Harrop
 #Function to count number of consonants
 def num_vowels(my_string):
     consonants = "bcdfghjklmnpqrstvwxyz"
