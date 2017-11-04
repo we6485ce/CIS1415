@@ -18,5 +18,5 @@ def calculations(data):
     print("Total rainfall for year:", sum(data))
 
 #Call functions
-calculations(data_entry())
+calculations(data_entry()) 
                  
