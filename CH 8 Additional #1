@@ -1,0 +1,22 @@
+#Eric Bjerke James Harrop
+#Ch 8 Addtional Problem 1
+
+#Function to input 12 rainfall amounts and store to a list
+def data_entry():
+    month = 1
+    rain_data = []
+    while month <= 12:
+        rain_data.append(float(input("Enter month %d rainfall in inches:\n" % (month))))
+        month += 1
+    return rain_data
+
+#Function to perform calculations display output 
+def calculations(data):
+    print("Highest rainfall amount:" , max(data))
+    print("Lowest rainfall amount:", min(data))
+    print("Average rainfall amount:", sum(data) / len(data))
+    print("Total rainfall for year:", sum(data))
+
+#Call functions
+calculations(data_entry())
+                 
