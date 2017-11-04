@@ -1,0 +1,13 @@
+#Eric Bjerke James Harrop
+#Ch 8.17
+
+player = 1
+team = {}
+
+while player <= 5:
+    jersey = input("Enter player %d's jersey number:\n" % player)
+    rating = input("Enter player %d's rating:\n" % player)
+    print()
+    player += 1
+
+print("ROSTER")
