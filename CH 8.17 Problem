@@ -1,13 +1,21 @@
 #Eric Bjerke James Harrop
 #Ch 8.17
 
+#Loops asking for input and entering into dictionary, also appends jersey_list so keys can be sorted in numerical order
 player = 1
 team = {}
-
+jersey_list = []
 while player <= 5:
-    jersey = input("Enter player %d's jersey number:\n" % player)
+    jersey = int(input("Enter player %d's jersey number:\n" % player))
     rating = input("Enter player %d's rating:\n" % player)
     print()
+    team[jersey] = rating
+    jersey_list.append(jersey)
     player += 1
 
+#prints dictionary of jersey number in ascending order and their rating
+jersey_list = sorted(jersey_list)
 print("ROSTER")
+for jersey in range(len(jersey_list)):
+    key = jersey_list[jersey]
+    print("Jersey number: %s, Rating: %s" % (key, team[key]))
