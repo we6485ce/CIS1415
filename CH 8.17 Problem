@@ -12,10 +12,35 @@ while player <= 5:
     team[jersey] = rating
     jersey_list.append(jersey)
     player += 1
-
-#prints dictionary of jersey number in ascending order and their rating
 jersey_list = sorted(jersey_list)
-print("ROSTER")
-for jersey in range(len(jersey_list)):
-    key = jersey_list[jersey]
-    print("Jersey number: %s, Rating: %s" % (key, team[key]))
+
+#function to print dictionary of jersey number in ascending order and their rating
+def roster():
+    print("ROSTER")
+    for jersey in range(len(jersey_list)):
+        key = jersey_list[jersey]
+        print("Jersey number: %s, Rating: %s" % (key, team[key]))
+    print()    
+
+#call function to print initial roster
+roster()
+
+
+#loop to print menu and ask for input until user enters q to quit
+user_input = ''
+while user_input != "q":
+    print("MENU")
+    print("a - Add player")
+    print("d - Remove player")
+    print("u - Update player rating")
+    print("r - Output players above a rating")
+    print("o - Output roster")
+    print("q - Quit")
+    print()
+    user_input = input("Choose an option:\n")
+    
+    if user_input == "q":
+        break
+    
+    if user_input == "o":
+        roster()
