@@ -1,0 +1,37 @@
+#Eric Bjerke James Harrop
+#Ch 8 Addtional Problem 2
+#Program to manage a list of firefighters on a scene of a call.
+
+firefighters = []
+
+def accountability():
+    user_input = ""
+    while user_input != "q":
+        print()
+        print("Personnel Tracker")
+        print("a - Display all on scene firefighters")
+        print("r - Firefighter left the scene")
+        print("n - Enter new firefighter on scene")
+        print("p - Purge list, all personnel left scene")
+        print("q - Quit")
+        print()
+        user_input = input("Enter an option\n")
+
+        if user_input == "q":
+            break
+        elif user_input == "a":
+            print("Current firefighters on scene:", firefighters)
+        elif user_input == "r":
+            name = input("Firefighter to remove:\n")
+            if name in firefighters:
+                firefighters.remove(name)
+            else:
+                print("Name not found, check spelling and try again.")
+        elif user_input == "n":
+            firefighters.append(input("Enter name:\n"))
+        elif user_input == "p":
+            firefighters.clear()
+        else:
+            print("Invalid entry, try again.")
+            
+accountability()   
