@@ -1,4 +1,5 @@
 # Eric Bjerke James Harrop
+# Chapter 8.17 soccer team roster
 # Function that prints menu
 def menu():
     print("\nMENU\na - Add player\nd - Remove player\nu - Update player rating\nr - Output players above a rating\no - Output roster\nq - Quit")
