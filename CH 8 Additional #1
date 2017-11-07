@@ -12,10 +12,10 @@ def data_entry():
 
 #Function to perform calculations display output 
 def calculations(data):
-    print("Highest rainfall amount:" , max(data))
-    print("Lowest rainfall amount:", min(data))
-    print("Average rainfall amount:", sum(data) / len(data))
-    print("Total rainfall for year:", sum(data))
+    print("Highest rainfall amount:", "%.2f" % max(data))
+    print("Lowest rainfall amount:", "%.2f" % min(data))
+    print("Average rainfall amount:", "%.2f" % (sum(data) / len(data)))
+    print("Total rainfall for year:", "%.2f" % sum(data))
 
 #Call functions
 calculations(data_entry()) 
