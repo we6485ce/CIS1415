@@ -1,0 +1,17 @@
+# Eric Bjerke James Harrop
+# Chapter 8 additional assignment 4
+# Program that uses a dictionary to track the frequency of each letter in a word or sentence
+usr_str = input("Enter a word or sentence: ")
+dictionary = {}
+
+# Map frequency of letters in user string using a dictionary
+for letters in range(len(usr_str)):
+    if not usr_str[letters] in dictionary:
+        dictionary[usr_str[letters]] = 1  # if user string is "too" dictionary = {t:1, o:1}
+    else:
+        dictionary[usr_str[letters]] = dictionary[usr_str[letters]]+ 1  # dictionary = {t:1, o:2} after this statement
+
+# Return a copy of the dictionary's list of (key, value) pairs  
+for key, value in dictionary.items():
+    print (key, ":", value)
+       
