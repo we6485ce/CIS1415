@@ -1,3 +1,7 @@
+# Eric Bjerke James Harrop
+# Chapter 8 additional assignment 3
+# Encrytpion and decryption
+
 codes = {'A':'`', 'a':'~', 'B':'1', 'b':'!', 'C':'2', 'c':'@', 'D':'3', 'd':'#',
          'E':'4', 'e':'$', 'F':'5', 'f':'%', 'G':'6', 'g':'^', 'H':'7', 'h':'&',
          'I':'8', 'i':'*', 'J':'9', 'j':'(', 'K':'0', 'k':')', 'L':'-', 'l':'_',
