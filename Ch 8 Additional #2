@@ -20,7 +20,7 @@ def accountability():
         if user_input == "q":
             break
         elif user_input == "a":
-            print("Current firefighters on scene:", firefighters)
+            print("Current firefighters on scene:", ", ".join(str(e) for e in firefighters))
         elif user_input == "r":
             name = input("Firefighter to remove:\n")
             if name in firefighters:
