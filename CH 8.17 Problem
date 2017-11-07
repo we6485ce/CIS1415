@@ -1,46 +1,84 @@
-#Eric Bjerke James Harrop
-#Ch 8.17
+# Eric Bjerke James Harrop
+# Function that prints menu
+def menu():
+    print("\nMENU\na - Add player\nd - Remove player\nu - Update player rating\nr - Output players above a rating\no - Output roster\nq - Quit")
 
-#Loops asking for input and entering into dictionary, also appends jersey_list so keys can be sorted in numerical order
-player = 1
-team = {}
-jersey_list = []
-while player <= 5:
-    jersey = int(input("Enter player %d's jersey number:\n" % player))
-    rating = input("Enter player %d's rating:\n" % player)
-    print()
-    team[jersey] = rating
-    jersey_list.append(jersey)
-    player += 1
-jersey_list = sorted(jersey_list)
+# Function that adds player to a roster
+def addPlayer(roster):
+    # Reading jersey numbers
+    jersey = int(input("Enter a new player's jersey number:\n"))
+    # Reading rating
+    rating = int(input("Enter the player's rating:\n"))
+    roster[jersey] = rating
 
-#function to print dictionary of jersey number in ascending order and their rating
-def roster():
+# Function that ouputs roster
+def outputRoster(roster):
     print("ROSTER")
-    for jersey in range(len(jersey_list)):
-        key = jersey_list[jersey]
-        print("Jersey number: %s, Rating: %s" % (key, team[key]))
-    print()    
+    # Sorting and printing
+    sortedRoster = sorted(roster.keys())
+    # Looping over each element in the dictionary and printing to console  
+    for jersey in sortedRoster:
+        print("Jersey number: " + str(jersey) + ", Rating: " + str(roster[jersey]))
+        
+# Function that deletes a player from the roster
+def deletePlayer(roster):
+    # Reading jersey numbers
+    jersey = int(input("Enter a jersey number:\n"))
+    # Searching for jersey number
+    if jersey in roster.keys(): 
+        # Deleting entry
+        del roster[jersey]
+  
+# Function that updates a player's rating      
+def updatePlayer(roster):
+    # Reading jersey numbers
+    jersey = int(input("Enter a jersey number:\n"))
+    # Searching for jersey number
+    if jersey in roster.keys():
+        # Reading rating
+        rating = int(input("Enter a new rating for player:\n"))
+        # Updating dictionary
+        roster[jersey] = rating
 
-#call function to print initial roster
-roster()
+# Function that displays player's ratings greater than the user input value      
+def aboveRating(roster):
+    # Reading rating
+    rating = int(input("Enter a rating:\n"))
+    print("ABOVE", str(rating))
+    # Sorting and printing
+    sortedRoster = sorted(roster.keys())
+    # Looping over each element in the dictionary and printing to console  
+    for jersey in sortedRoster:
+        # Printing values above the rating
+        if roster[jersey] > rating:
+            print("Jersey number: " + str(jersey) + ", Rating: " + str(roster[jersey]))
 
-
-#loop to print menu and ask for input until user enters q to quit
-user_input = ''
-while user_input != "q":
-    print("MENU")
-    print("a - Add player")
-    print("d - Remove player")
-    print("u - Update player rating")
-    print("r - Output players above a rating")
-    print("o - Output roster")
-    print("q - Quit")
+roster = {}
+i = 1
+# Storing five player details
+for i in range(1,6):
+    # Reading jersey numbers
+    jersey = int(input("Enter player " + str(i) + "'s jersey number:\n"))
+    # Reading rating
+    rating = int(input("Enter player " + str(i) + "'s rating:\n"))
     print()
-    user_input = input("Choose an option:\n")
-    
-    if user_input == "q":
+    roster[jersey] = rating
+outputRoster(roster)
+# Loop untill user wants to quit
+while True:
+    menu()
+    # Reading option from user
+    option = input("\nChoose an option:\n")
+    # Calling appropriate function
+    if option == 'a':
+        addPlayer(roster)
+    elif option == 'd':
+        deletePlayer(roster)
+    elif option == 'o':
+        outputRoster(roster)
+    elif option == 'u':
+        updatePlayer(roster)
+    elif option == 'r':
+        aboveRating(roster)
+    elif option == 'q':
         break
-    
-    if user_input == "o":
-        roster()
