@@ -1,0 +1,47 @@
+class Employee:
+    def __init__(self, name, id_number, department, job_title):
+        self.name = name
+        self.id_number = id_number
+        self.department = department
+        self.job_title = job_title
+        
+    #Methods for getting name, id number, department, and job title
+    def get_name(self):
+        return self.name
+
+    def get_id_number(self):
+        return self.id_number
+
+    def get_department(self):
+        return self.department
+
+    def get_job_title(self):
+        return self.job_title
+
+def main():
+    #Create Employee objects
+    employee_1 = Employee('Susan Meyers', '47899', 'Accounting', 'Vice President')
+    name_1 = employee_1.get_name()
+    id_number_1 = employee_1.get_id_number()
+    department_1 = employee_1.get_department()
+    job_title_1 = employee_1.get_job_title()
+
+    employee_2 = Employee('Mark Jones', '39119', 'IT', 'Programming')
+    name_2 = employee_2.get_name()
+    id_number_2 = employee_2.get_id_number()
+    department_2 = employee_2.get_department()
+    job_title_2 = employee_2.get_job_title()
+
+    employee_3 = Employee('Joy Rogers', '81774', 'Manufacturing', 'Engineer')
+    name_3 = employee_3.get_name()
+    id_number_3 = employee_3.get_id_number()
+    department_3 = employee_3.get_department()
+    job_title_3 = employee_3.get_job_title()
+    
+    #Output objects
+    print('{:>0} {:>25} {:>25} {:>25}'.format('Name', 'ID Number', 'Department', 'Job Title'))
+    print('{:>0} {:>13} {:>29} {:>30}'.format(name_1, id_number_1, department_1, job_title_1))
+    print('{:>0} {:>15} {:>21} {:>35}'.format(name_2, id_number_2, department_2, job_title_2))
+    print('{:>0} {:>15} {:>32} {:>21}'.format(name_3, id_number_3, department_3, job_title_3))
+
+main()
