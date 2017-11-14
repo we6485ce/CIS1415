@@ -1,0 +1,46 @@
+class ShoppingCart:
+    def __init__(self, customer_name="none", current_date="January 1, 2016", item="none"):
+        self.cart = []
+        self.customer_name = customer_name
+        self.current_date = current_date
+    
+    def add_item(self, item):        
+        self.cart.append(item)
+    
+    def get_num_items_in_cart(self):
+        num_items = 6
+        return num_items
+    
+    def remove_item(self, item):
+        for i in self.cart:
+            if i.item_name == item:
+                self.cart.remove(i)
+                print()
+                break
+        else:
+            print("Item not found in cart. Nothing removed.\n")
+    
+    def get_cost_of_cart(self):
+        total = 0
+        for i in self.cart:
+            total += (i.item_price * i.item_quantity)
+        return total
+    
+    def output_cart(self):
+        item_in_cart = 0
+        for i in self.cart:
+            item_in_cart += int(i.item_quantity)
+        print("OUTPUT SHOPPING CART")
+        print("%s's Shopping Cart - %s" % (self.customer_name, self.current_date))
+        print("Number of Items:", item_in_cart)
+        print()
+        if item_in_cart == 0:
+            print("SHOPPING CART IS EMPTY")
+            print("\nTotal: $0\n")
+        if item_in_cart > 0:
+            cart_dollar_total = 0
+            for i in self.cart:
+                print("%s %d @ $%d = $%d" % (i.item_name, i.item_quantity, i.item_price,(i.item_price * i.item_quantity)))
+                cart_dollar_total += (i.item_price * i.item_quantity)
+            print("\nTotal: $%d" % cart_dollar_total)
+            print()
