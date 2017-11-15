@@ -1,14 +1,14 @@
 #Eric Bjerke James Harrop
 
 class ItemToPurchase:
-    def __init__(self, item_name="none", item_price=0, item_quantity=0, item_description="none" ):
+    def __init__(self, item_name="none", item_price=0.0, item_quantity=0, item_description="none" ):
         self.item_name = item_name
         self.item_price = item_price
         self.item_quantity = item_quantity
         self.item_description = item_description    
         
     def print_item_cost(self):            
-        print("%s %d @ $%d = $%d" % (self.item_name, self.item_quantity, self.item_price, self.item_price*self.item_quantity))
+        print("%s %d @ $%.2f = $%.2f" % (self.item_name, self.item_quantity, self.item_price, self.item_price*self.item_quantity))
     
     def print_item_description(self):
         print()    
@@ -56,9 +56,9 @@ class ShoppingCart:
         if item_in_cart > 0:
             cart_dollar_total = 0
             for i in self.cart:
-                print("%s %d @ $%d = $%d" % (i.item_name, i.item_quantity, i.item_price,(i.item_price * i.item_quantity)))
+                print("%s %d @ $%.2f = $%.2f" % (i.item_name, i.item_quantity, i.item_price,(i.item_price * i.item_quantity)))
                 cart_dollar_total += (i.item_price * i.item_quantity)
-            print("\nTotal: $%d" % cart_dollar_total)
+            print("\nTotal: $%.2f" % cart_dollar_total)
             print()
     
     def modify_item(self, item, new_quantity):
