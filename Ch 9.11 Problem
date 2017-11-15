@@ -98,7 +98,7 @@ if __name__ == "__main__":
             print("ADD ITEM TO CART")
             item = input("Enter the item name:\n")
             description = input("Enter the item description:\n")
-            price = int(input("Enter the item price:\n"))
+            price = float(input("Enter the item price:\n"))
             quan = int(input("Enter the item quantity:\n"))            
             item = ItemToPurchase(item, price, quan, description)
             customer.add_item(item)
