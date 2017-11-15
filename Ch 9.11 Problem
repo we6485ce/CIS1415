@@ -23,8 +23,9 @@ class ShoppingCart:
         self.cart.append(item)
     
     def get_num_items_in_cart(self):
-        num_items = 6
-        return num_items
+        item_in_cart = 0
+        for i in self.cart:
+            item_in_cart += int(i.item_quantity)
     
     def remove_item(self, item):
         for i in self.cart:
